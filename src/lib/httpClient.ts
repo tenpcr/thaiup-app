@@ -45,9 +45,7 @@ api.interceptors.response.use(
   response => response,
   async (error: any) => {
     const originalRequest: any = error.config;
-
-    console.log("Res Status: ", error.response)
-
+    
     if (
       error.response?.status === 401 &&
       error.response?.data?.error_code === 'INVALID_OR_EXPIRED_TOKEN' &&
@@ -83,11 +81,10 @@ api.interceptors.response.use(
         );
 
         const newAccessToken = data?.data?.access_token;
+
         if (!newAccessToken) throw new Error('No access token returned');
 
         await tokenUtils.setToken('access-token', newAccessToken);
-
-        console.log("newAccessToken ", newAccessToken )
 
         processQueue(null, newAccessToken);
 
