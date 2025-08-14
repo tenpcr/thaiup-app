@@ -1,6 +1,5 @@
 import { SagaIterator } from 'redux-saga';
 import { takeLatest, call, put } from 'redux-saga/effects';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
   LOGOUT_REQUEST,
   AUTH_SET_AUTHENTICATED,

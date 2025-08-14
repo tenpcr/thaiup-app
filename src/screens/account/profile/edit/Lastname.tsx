@@ -17,7 +17,6 @@ import TextInputForm from '../../../../components/Form/TextInput';
 import ButtonForm from '../../../../components/Form/Button';
 import {
   AccountStackParamList,
-  RootStackParamList,
 } from '../../../../type/navigation';
 import * as authService from '../../../../service/apis/auth.service';
 import TopAlert from '../../../../components/Form/TopAlert';

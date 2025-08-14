@@ -8,27 +8,21 @@ import { useDispatch } from 'react-redux';
 import { AppStack } from './navigation/AppStack';
 
 // Screens
-import HomeScreen from './screens/Home';
-import PrivacyPolicy from './screens/account/PrivacyPolicy';
-import Login from './screens/account/Login';
+
 import SplashScreen from './screens/SplashScreen';
 import Error500 from './screens/500';
 import NewVersion from './screens/NewVersion';
-import ProfileFirstnameEdit from './screens/account/profile/edit/Firstname';
-import ProfileLastnameEdit from './screens/account/profile/edit/Lastname';
+
 
 // Utils & Services
 import * as Helper from './utils/helper';
 import i18n from './i18n';
 import * as serverService from './service/apis/server.service';
-import * as authService from './service/apis/auth.service';
-import { setUserProfile } from './redux/actions/userActions';
-import { setAuthenticated, checkAuth } from './redux/actions/authActions';
+import {  checkAuth } from './redux/actions/authActions';
 
 // Env
 import { VERSION, PLAY_STORE_URL, APP_STORE_URL } from '@env';
 import wrapper from './redux/store';
-import AccountProfile from './screens/account/profile/Profile';
 import { RootStackParamList } from './type/navigation';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -83,7 +77,7 @@ const App = () => {
         setShowNewVersion({ show: true, newVersion: serverVersion });
       }
     } catch (error) {
-      console.error('App version check failed:', error);
+      console.log('App version check failed:', error);
     }
   };
 
@@ -127,52 +121,6 @@ const App = () => {
       <SafeAreaView style={{ flex: 1 }}>
         <NavigationContainer>
           <AppStack />
-          {/* <Stack.Navigator initialRouteName="Home">
-           */}
-          {/* <Stack.Screen
-              name="Home"
-              component={HomeScreen}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AccountProfile"
-              component={AccountProfile}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="AccountProfileFirstnameEdit"
-              component={ProfileFirstnameEdit}
-              options={{ headerShown: false }}
-            />
-
-            <Stack.Screen
-              name="AccountProfileLastnameEdit"
-              component={ProfileLastnameEdit}
-              options={{ headerShown: false }}
-            />
-
-            <Stack.Screen
-              name="ArticleAll"
-              component={ArticleAll}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="ArticleView"
-              component={ArticleView}
-              options={{ headerShown: false }}
-            />
-
-            <Stack.Screen
-              name="PrivacyPolicy"
-              component={PrivacyPolicy}
-              options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Login"
-              component={Login}
-              options={{ headerShown: false }}
-            />
-          </Stack.Navigator> */}
         </NavigationContainer>
       </SafeAreaView>
     </GestureHandlerRootView>

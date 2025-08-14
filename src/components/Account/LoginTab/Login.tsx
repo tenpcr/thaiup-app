@@ -5,10 +5,9 @@ import { useTranslation } from 'react-i18next';
 import * as authService from '../../../service/apis/auth.service';
 import { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setAuthenticated } from '../../../redux/actions/authActions';
 import { setUserProfile } from '../../../redux/actions/userActions';
-import * as Helper from '../../../utils/helper';
 import * as tokenUtils from '../../../utils/token.utils';
 import TopAlert from '../../Form/TopAlert';
 
@@ -28,7 +27,6 @@ function LoginTab() {
   });
   const [loading, setLoading] = useState<boolean>(false);
   const [topAlert, setTopAlert] = useState<any>({});
-  const userProfile = useSelector((state: any) => state.userProfile.result);
 
   const handleLogin = async () => {
     try {
