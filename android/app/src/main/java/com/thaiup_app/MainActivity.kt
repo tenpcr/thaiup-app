@@ -1,4 +1,4 @@
-package com.thaiup_app
+package com.thaiup.app
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

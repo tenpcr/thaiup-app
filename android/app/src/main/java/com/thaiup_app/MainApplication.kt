@@ -1,4 +1,4 @@
-package com.thaiup_app
+package com.thaiup.app
 
 import android.app.Application
 import com.facebook.react.PackageList

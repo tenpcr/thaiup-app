@@ -2,6 +2,8 @@
 #
 .DS_Store
 
+.env
+
 # Xcode
 #
 build/
@@ -28,12 +30,15 @@ build/
 .idea
 .gradle
 local.properties
+gradle.properties
 *.iml
 *.hprof
 .cxx/
 *.keystore
+production-key.keystore
 !debug.keystore
 .kotlin/
+
 
 # node.js
 #
